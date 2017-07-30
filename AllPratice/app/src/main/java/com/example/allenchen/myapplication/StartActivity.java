@@ -26,6 +26,8 @@ public class StartActivity extends AppCompatActivity {
         PagerAdapter pagerAdapter = new PagerAdapter( getSupportFragmentManager() ,fragments);
         ViewPager viewPager = (ViewPager)this.findViewById(R.id.vp1);
         viewPager.setAdapter(pagerAdapter);
+        viewPager.setPageTransformer(true,new ZoomOutPageTransformer());
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(viewPager);
